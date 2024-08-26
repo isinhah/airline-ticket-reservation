@@ -1,5 +1,6 @@
 package com.airline_ticket.api.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -18,6 +19,7 @@ public class Seat implements Serializable {
     @Column(name = "is_available", nullable = false)
     private Boolean isAvailable;
 
+    @JsonIgnore
     @OneToOne(mappedBy = "seat")
     private Reservation reservation;
     @ManyToOne
