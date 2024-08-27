@@ -2,7 +2,6 @@ package com.airline_ticket.api.service;
 
 import com.airline_ticket.api.exceptions.ResourceNotFoundException;
 import com.airline_ticket.api.model.Flight;
-import com.airline_ticket.api.model.Reservation;
 import com.airline_ticket.api.model.Seat;
 import com.airline_ticket.api.model.dtos.seat.SeatDTO;
 import com.airline_ticket.api.model.dtos.seat.SeatRequestDTO;
@@ -37,9 +36,9 @@ public class SeatService {
         return SeatDTO.seatToDTO(seat);
     }
 
-    public Page<SeatDTO> getAvailableSeats(Boolean isAvailable, Pageable pageable) {
-        Page<Seat> seatPage = seatRepository.findByIsAvailable(isAvailable, pageable);
-        return seatPage.map(SeatDTO::seatToDTO);
+    public Page<SeatDTO> getAvailableSeatsByFlight(UUID flightId, Boolean isAvailable, Pageable pageable) {
+         Page<Seat> seatPage = seatRepository.findByFlightIdAndIsAvailable(flightId, isAvailable, pageable);
+         return seatPage.map(SeatDTO::seatToDTO);
     }
 
     public Page<SeatDTO> getSeats(String seatNumber, UUID flightId, Pageable pageable) {

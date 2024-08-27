@@ -34,10 +34,13 @@ public class SeatController {
         return seatService.getSeatById(id);
     }
 
-    @GetMapping("/searchByAvailability")
+    @GetMapping("/searchAvailableSeats")
     @ResponseStatus(HttpStatus.OK)
-    public List<SeatDTO> findAvailableSeats(@RequestParam Boolean isAvailable, @PageableDefault(size = 10) Pageable pageable) {
-        return seatService.getAvailableSeats(isAvailable, pageable).getContent();
+    public List<SeatDTO> findAvailableSeats(
+            @RequestParam UUID flightId,
+            @PageableDefault(size = 10) Pageable pageable) {
+        Boolean isAvailable = true;
+        return seatService.getAvailableSeatsByFlight(flightId, isAvailable, pageable).getContent();
     }
 
     @GetMapping("/search")

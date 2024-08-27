@@ -12,4 +12,5 @@ public interface SeatRepository extends JpaRepository<Seat, UUID> {
     Page<Seat> findBySeatNumberAndFlightId(String seatNumber, UUID flightId, Pageable pageable);
     Page<Seat> findBySeatNumber(String seatNumber, Pageable pageable);
     Page<Seat> findByFlightId(UUID id, Pageable pageable);
+    Page<Seat> findByFlightIdAndIsAvailable(UUID flightId, Boolean isAvailable, Pageable pageable);
 }
