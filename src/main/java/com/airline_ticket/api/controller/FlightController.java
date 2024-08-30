@@ -1,5 +1,6 @@
 package com.airline_ticket.api.controller;
 
+import com.airline_ticket.api.controller.swagger.FlightControllerInterface;
 import com.airline_ticket.api.model.dtos.flight.FlightDTO;
 import com.airline_ticket.api.model.dtos.flight.FlightRequestDTO;
 import com.airline_ticket.api.model.dtos.flight.FlightUpdateDTO;
@@ -18,7 +19,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/flights")
-public class FlightController {
+public class FlightController implements FlightControllerInterface {
 
     @Autowired
     private FlightService flightService;
@@ -65,16 +66,16 @@ public class FlightController {
     @GetMapping("/searchByDepartureTime")
     @ResponseStatus(HttpStatus.OK)
     public List<FlightDTO> findFlightsByDepartureTime(@RequestParam ZonedDateTime start,
-                                                                     @RequestParam ZonedDateTime end,
-                                                                     @PageableDefault(size = 10) Pageable pageable) {
+                                                      @RequestParam ZonedDateTime end,
+                                                      @PageableDefault(size = 10) Pageable pageable) {
         return flightService.getFlightsByDepartureTime(start, end, pageable).getContent();
     }
 
     @GetMapping("/searchByArrivalTime")
     @ResponseStatus(HttpStatus.OK)
     public List<FlightDTO> findFlightsByArrivalTime(@RequestParam ZonedDateTime start,
-                                                      @RequestParam ZonedDateTime end,
-                                                      @PageableDefault(size = 10) Pageable pageable) {
+                                                    @RequestParam ZonedDateTime end,
+                                                    @PageableDefault(size = 10) Pageable pageable) {
         return flightService.getFlightsByArrivalTime(start, end, pageable).getContent();
     }
 

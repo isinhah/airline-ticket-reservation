@@ -1,9 +1,10 @@
 package com.airline_ticket.api.controller;
 
-import com.airline_ticket.api.model.dtos.login_register.LoginRequestDTO;
-import com.airline_ticket.api.model.dtos.login_register.RegisterEmployeeRequestDTO;
-import com.airline_ticket.api.model.dtos.login_register.RegisterPassengerRequestDTO;
-import com.airline_ticket.api.model.dtos.login_register.ResponseDTO;
+import com.airline_ticket.api.controller.swagger.AuthControllerInterface;
+import com.airline_ticket.api.model.dtos.auth.LoginRequestDTO;
+import com.airline_ticket.api.model.dtos.auth.RegisterEmployeeRequestDTO;
+import com.airline_ticket.api.model.dtos.auth.RegisterPassengerRequestDTO;
+import com.airline_ticket.api.model.dtos.auth.ResponseDTO;
 import com.airline_ticket.api.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/auth")
-public class AuthController {
+public class AuthController implements AuthControllerInterface {
     @Autowired
     private AuthService authService;
 

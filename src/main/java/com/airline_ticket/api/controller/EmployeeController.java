@@ -1,5 +1,6 @@
 package com.airline_ticket.api.controller;
 
+import com.airline_ticket.api.controller.swagger.EmployeeControllerInterface;
 import com.airline_ticket.api.model.dtos.employee.EmployeeDTO;
 import com.airline_ticket.api.model.dtos.employee.EmployeeRequestDTO;
 import com.airline_ticket.api.model.dtos.employee.EmployeeUpdateDTO;
@@ -17,7 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/employees")
-public class EmployeeController {
+public class EmployeeController implements EmployeeControllerInterface {
 
     @Autowired
     private EmployeeService employeeService;

@@ -3,7 +3,7 @@ package com.airline_ticket.api.service;
 import com.airline_ticket.api.exceptions.ResourceNotFoundException;
 import com.airline_ticket.api.model.Employee;
 import com.airline_ticket.api.model.Passenger;
-import com.airline_ticket.api.model.dtos.login_register.ResponseDTO;
+import com.airline_ticket.api.model.dtos.auth.ResponseDTO;
 import com.airline_ticket.api.repository.EmployeeRepository;
 import com.airline_ticket.api.repository.PassengerRepository;
 import com.airline_ticket.api.security.TokenService;

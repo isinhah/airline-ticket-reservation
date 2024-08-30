@@ -1,5 +1,6 @@
 package com.airline_ticket.api.controller;
 
+import com.airline_ticket.api.controller.swagger.PassengerControllerInterface;
 import com.airline_ticket.api.model.dtos.passenger.PassengerDTO;
 import com.airline_ticket.api.model.dtos.passenger.PassengerRequestDTO;
 import com.airline_ticket.api.model.dtos.passenger.PassengerUpdateDTO;
@@ -17,7 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/passengers")
-public class PassengerController {
+public class PassengerController implements PassengerControllerInterface {
 
     @Autowired
     private PassengerService passengerService;

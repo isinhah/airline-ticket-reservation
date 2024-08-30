@@ -1,5 +1,6 @@
 package com.airline_ticket.api.controller;
 
+import com.airline_ticket.api.controller.swagger.ReservationControllerInterface;
 import com.airline_ticket.api.model.dtos.reservation.ReservationDTO;
 import com.airline_ticket.api.model.dtos.reservation.ReservationRequestDTO;
 import com.airline_ticket.api.model.dtos.reservation.ReservationUpdateDTO;
@@ -17,7 +18,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/reservations")
-public class ReservationController {
+public class ReservationController implements ReservationControllerInterface {
     @Autowired
     private ReservationService reservationService;
 

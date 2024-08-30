@@ -1,8 +1,8 @@
 package com.airline_ticket.api.constants;
 
-import com.airline_ticket.api.model.dtos.login_register.LoginRequestDTO;
-import com.airline_ticket.api.model.dtos.login_register.RegisterEmployeeRequestDTO;
-import com.airline_ticket.api.model.dtos.login_register.RegisterPassengerRequestDTO;
+import com.airline_ticket.api.model.dtos.auth.LoginRequestDTO;
+import com.airline_ticket.api.model.dtos.auth.RegisterEmployeeRequestDTO;
+import com.airline_ticket.api.model.dtos.auth.RegisterPassengerRequestDTO;
 
 import static com.airline_ticket.api.constants.EmployeeConstants.EMPLOYEE_1;
 import static com.airline_ticket.api.constants.PassengerConstants.PASSENGER_1;
