@@ -129,9 +129,7 @@ public class ReservationService {
     }
 
     public void deleteReservation(UUID id) {
-        if (!reservationRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Reservation not found with id " + id);
-        }
+        verifyReservationExistsById(id);
         reservationRepository.deleteById(id);
     }
 

@@ -23,7 +23,7 @@ public record PassengerUpdateDTO(
         String password,
 
         @NotBlank(message = "Phone cannot be blank")
-        @Size(min = 10, max = 15, message = "Phone number must be between 10 and 15 characters")
+        @Size(min = 10, max = 15, message = "Phone number must be between 9 and 15 characters")
         String phone
 ) {
 }
