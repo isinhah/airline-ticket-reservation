@@ -1,0 +1,22 @@
+# Database Configuration
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/airline_ticket_api}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:admin}
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+# JWT
+api:
+  security:
+    token:
+      secret: my-secret-key
+
+# CORS
+cors:
+  allowed:
+    origins: http://localhost:8080
